@@ -2,7 +2,7 @@ import { add, remove } from "./types";
 
 const defaultState = { products: [], total: 0 };
 
-const reducers = (state = defaultState, action) => {
+const cart = (state = defaultState, action) => {
   const { products, total } = state;
   const { product, id } = action;
 
@@ -20,4 +20,4 @@ const reducers = (state = defaultState, action) => {
   }
 };
 
-export default reducers;
+export default cart;

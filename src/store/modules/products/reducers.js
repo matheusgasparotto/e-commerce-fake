@@ -20,7 +20,8 @@ const defaultState = {
   ],
 };
 
-const reducers = (state = defaultState) => {
+const products = (state = defaultState) => {
   return state;
 };
-export default reducers;
+
+export default products;

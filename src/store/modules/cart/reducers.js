@@ -8,6 +8,7 @@ const cart = (state = defaultState, action) => {
 
   switch (action.type) {
     case add:
+      console.log(state);
       const addProducts = [...products, product];
       return { total: total + 1, products: addProducts };
 

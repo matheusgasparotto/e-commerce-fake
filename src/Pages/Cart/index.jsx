@@ -1,14 +1,19 @@
 import FoodCard from "../../components/FoodCard";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { Container } from "./style";
 
 const Cart = () => {
   const products = useSelector((state) => state.cart.products);
+  console.log(products);
   return (
     <Container>
-      {products.map((product, index) => (
-        <FoodCard key={index} data={product} removable />
-      ))}
+      {products.length === 0 ? (
+        <h1>Não há itens no carrinho</h1>
+      ) : (
+        products.map((product, index) => (
+          <FoodCard key={index} data={product} removable />
+        ))
+      )}
     </Container>
   );
 };

@@ -4,7 +4,7 @@ import { Container } from "./style";
 import { useState, useEffect } from "react";
 
 const Cart = () => {
-  const products = useSelector((state) => state.cart.products);
+  const { products, total } = useSelector((state) => state.cart);
 
   const [messages, setMessages] = useState();
 
@@ -32,6 +32,9 @@ const Cart = () => {
 
   return (
     <Container>
+      <div style={{ width: "100%" }}>
+        <h1>total de itens: {total}</h1>
+      </div>
       {products.length === 0 ? (
         <h1>Não há itens no carrinho</h1>
       ) : (
@@ -39,7 +42,11 @@ const Cart = () => {
           <FoodCard key={index} data={product} removable />
         ))
       )}
-      {products.length > 0 && <h1>{messages}</h1>}
+      {products.length > 0 && (
+        <div style={{ width: "100%" }}>
+          <h1>{messages}</h1>
+        </div>
+      )}
     </Container>
   );
 };
